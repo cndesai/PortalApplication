@@ -1,0 +1,77 @@
+<div class="row content">
+  <div class="col-sm-3 sidebar">
+    <h4>Applications</h4>
+    <ul class="nav nav-pills nav-stacked">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" routerLink="/servermanagement">Server Information</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" routerLink="/alertmatrix">Alert Matrix</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" routerLink="/alerts">Alerts</a>
+      </li>
+    </ul>
+  </div>
+  <div id="serverdetailsdiv" class="col-sm-9" [style.display]="showDiv1? 'block' : 'none'">
+    <div class="centerpanel" *ngFor="let server of serverdata">
+      <ngb-alert type="secondary" [dismissible]="false">
+        <h3>
+          <a href="#">{{server.ShortHostName}}</a>
+        </h3>
+        <p>{{server.HostName}}</p>
+        <div>
+          <a href="/servermanagement/{{server.ServerId}}" target="_self" class="btn-btn-danger">View Server Details</a>
+        </div>
+      </ngb-alert>
+    </div>
+  </div>
+  <div id="alertmatrixdiv" class="col-sm-9" [style.display]="showDiv2? 'block' : 'none'">
+    <div class="centerpanel" *ngFor="let alertmatrix of alertmatrixdata">
+      <ngb-alert type="secondary" [dismissible]="false">
+        <h3>
+          <a href="#">{{alertmatrix.Description}}</a>
+        </h3>
+        <p>{{alertmatrix.NotificationDriver}}</p>
+        <div class="row">
+          <div class="col-sm-9">
+            <a href="/alertmatrix/{{alertmatrix.Id}}" target="_self" class="btn-btn-danger">Go To Alert</a>
+          </div>
+          <div class="col-sm-3" style="float:right">
+            <img src="../../../assets/icons/isgportal_tools.png " title="Tools" />
+            <!-- <a href=" " target="_blank ">
+                  <img src="../../../assets/icons/isgportal_telephone.png " title="Call Helpdesk! " />
+                </a> -->
+            <a href="mailto:chintan.desai@ingramcontent.com " target="_blank">
+              <img src="../../../assets/icons/nemail.png " title="Send Email!" />
+            </a>
+          </div>
+        </div>
+      </ngb-alert>
+    </div>
+  </div>
+  <div id="alertdiv" class="col-sm-9" [style.display]="showDiv3? 'block' : 'none'">
+    <div class="centerpanel" *ngFor="let alert of alerts">
+      <ngb-alert type="secondary" [dismissible]="false">
+        <h3>
+          <a href="# ">{{alert.CompId}} + _ + {{alert.ExceptionCode}}</a>
+        </h3>
+        <p>{{alert.ComponentName}}</p>
+        <div class="row">
+          <div class="col-sm-9">
+            <a href="/alerts/{{alert.CompId}} " target="_self" class="btn-btn-danger">View Details</a>
+          </div>
+          <div class="col-sm-3" style="float:right">
+            <img src="../../../assets/icons/isgportal_tools.png " title="Tools" />
+            <a routerLink="/makecall">
+              <img src="../../../assets/icons/isgportal_telephone.png " title="Call Helpdesk!" />
+            </a>
+            <a href="mailto:chintan.desai@ingramcontent.com" target="_blank">
+              <img src="../../../assets/icons/nemail.png" title="Send Email!" />
+            </a>
+          </div>
+        </div>
+      </ngb-alert>
+    </div>
+  </div>
+</div>

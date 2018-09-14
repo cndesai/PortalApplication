@@ -1,0 +1,40 @@
+<h1>{{title}}{{serverInfo.HostName | uppercase}}</h1>
+<hr>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Server Id</th>
+    <td>
+      <span [innerText]="serverInfo.ServerId"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Host Short Name</th>
+    <td>
+      <span [innerText]="serverInfo.ShortHostName"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Host Name</th>
+    <td>
+      <span [innerText]="serverInfo.HostName"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Server Type</th>
+    <td>
+      <span [innerText]="serverInfo.ServerType"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>IP Address</th>
+    <td>
+      <span [innerText]="serverInfo.IPAddress"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>OS Version</th>
+    <td>
+      <span [innerText]="serverInfo.OSVersion"></span>
+    </td>
+  </tr>
+</table>

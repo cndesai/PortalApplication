@@ -1,0 +1,46 @@
+<h1>{{title}}{{alertRecord.ExceptionCode | uppercase}}</h1>
+<hr>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>ExceptionCode</th>
+    <td>
+      <span [innerText]="alertRecord.ExceptionCode"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Component Id</th>
+    <td>
+      <span [innerText]="alertRecord.CompId"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>EventSource</th>
+    <td>
+      <span [innerText]="alertRecord.EventSource"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Count</th>
+    <td>
+      <span [innerText]="alertRecord.Count"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td>
+      <span [innerText]="alertRecord.Status"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Server</th>
+    <td>
+      <span [innerText]="alertRecord.Server"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>NotificationMessage</th>
+    <td>
+      <span [innerText]="alertRecord.NotificationMessage"></span>
+    </td>
+  </tr>
+</table>

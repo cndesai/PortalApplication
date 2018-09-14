@@ -1,0 +1,22 @@
+ensure that the import in styles finishes with a ;
+install firebase 4.5.0 - npm i --save firebase@4.5.0  to get firebase working
+
+after taking the code from bootstrap to make the hamburger work update the code as below
+
+Modify the line 
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+
+to 
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+
+
+Modify the line
+
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+to
+
+ 	<div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+
+also create a variable isCollapsed in the ts file "app-navbar.component.ts" and update the constructor function to set it to true

@@ -1,0 +1,11 @@
+<ul>
+	<div *ngFor="let course of serverdata">
+		<ngb-alert type="info" [dismissible]="false">
+			<h3><a href="#">{{course.ShortHostName}}</a></h3>
+			<p>{{course.HostName}}</p>
+			<div>
+				<a href="{{course.ServerType}}" target="_blank" class="btn-btn-danger">Go To Course</a>
+			</div>
+		</ngb-alert>
+	</div>
+</ul>
